@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UX220 Lab 5</title>
+</head>
+<body>
+    <x-center>
+        <h1>UX220 Lab 5</h1>
+        <p>This paragraph is centered by a custom element.</p>
+    </x-center>
+
+    <script>
+        class XCenter extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `<div style="text-align: center;">${this.innerHTML}</div>`;
+            }
+        }
+
+        customElements.define("x-center", XCenter);
+    </script>
+</body>
+</html>
